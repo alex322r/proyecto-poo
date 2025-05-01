@@ -20,7 +20,9 @@ import java.sql.*;
 import java.util.Scanner;
 import Clases.Usuario;
 import Clases.SistemaReportes;
+import InterfazGrafica.VentanaBase;
 import java.io.Console;
+import javax.swing.SwingUtilities;
 
 public class App {
     
@@ -32,6 +34,8 @@ public class App {
     
     
     public static void main(String[] args) {
+        
+        new VentanaBase("titulo",1200,800).mostrar();
         
         
         /*
