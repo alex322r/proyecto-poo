@@ -34,15 +34,15 @@ public class SistemaReportes {
             
             ResultSet rs = ps.executeQuery();
 
-        if (rs.next()) {
-            usuario = new Usuario(
-                rs.getString("dni"),
-                rs.getString("nombre"),
-                rs.getString("apellido"),
-                rs.getString("correo"),
-                rs.getString("rol")
-            );
-        }
+            if (rs.next()) {
+                usuario = new Usuario(
+                    rs.getString("dni"),
+                    rs.getString("nombre"),
+                    rs.getString("apellido"),
+                    rs.getString("correo"),
+                    rs.getString("rol")
+                );
+            }
            
             ps.close();
              
@@ -50,10 +50,14 @@ public class SistemaReportes {
             System.out.println("Error al conectar");
             e.printStackTrace();
         } 
-    
+        
         return usuario;
     }
 
+    public Usuario getUsuario() {
+        return usuario;
+    }
+    
     public void registrarUsuario(Usuario u) {
         
     
